@@ -2,7 +2,7 @@
 
 return [
     'repository' => [
-        'folder_path' => app_path('repositories'),
-        'model_namespace' => 'App\\Models\\'
+        'folder_path' => app_path('Repositories'),
+        'model_namespace' => 'App\\Models'
     ],
 ];

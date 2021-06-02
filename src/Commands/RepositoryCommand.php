@@ -22,6 +22,7 @@ class RepositoryCommand extends GeneratorCommand
     protected function getPath($name): string
     {
         $className = $this->getModelName($name);
+
         return config('cafe.repository.folder_path') . "/$className" . 'Repository.php';
     }
 
@@ -37,6 +38,7 @@ class RepositoryCommand extends GeneratorCommand
         return $this->replaceModelNamespace($stub, config('cafe.repository.model_namespace'))
             ->replaceModelName($stub, $this->getModelName($name));
     }
+
     /**
      * @param  string  $stub
      * @param  string  $name
@@ -55,6 +57,7 @@ class RepositoryCommand extends GeneratorCommand
     protected function replaceModelNamespace(&$stub, $namespace)
     {
         $stub = str_replace('DummyModelNamespace', $namespace, $stub);
+
         return $this;
     }
 
@@ -65,6 +68,7 @@ class RepositoryCommand extends GeneratorCommand
     protected function getModelName(string $name): string
     {
         $className = explode('\\', $name);
+
         return ucfirst($className[count($className) - 1]);
     }
 }

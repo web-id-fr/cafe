@@ -15,8 +15,6 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'WebId\\Cafe\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
-
-
     }
 
     protected function getPackageProviders($app)
