@@ -15,6 +15,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'WebId\\Cafe\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+
     }
 
     protected function getPackageProviders($app)
@@ -27,10 +29,6 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
-
-        /*
-        include_once __DIR__.'/../database/migrations/create_cafe_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        config()->set('cafe.repositories_folder_path', 'repositories');
     }
 }

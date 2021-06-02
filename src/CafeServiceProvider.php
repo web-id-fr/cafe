@@ -4,7 +4,7 @@ namespace WebId\Cafe;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use WebId\Cafe\Commands\CafeCommand;
+use WebId\Cafe\Commands\RepositoryCommand;
 
 class CafeServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +20,6 @@ class CafeServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_cafe_table')
-            ->hasCommand(CafeCommand::class);
+            ->hasCommand(RepositoryCommand::class);
     }
 }

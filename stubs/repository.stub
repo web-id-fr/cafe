@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Repositories;
+
+use DummyModelNamespace\DummyModelName;
+
+class DummyModelNameRepository
+{
+    private DummyModelName $model;
+
+    /**
+     * @param DummyModelName $model
+     */
+    public function __construct(DummyModelName $model)
+    {
+        $this->model = $model;
+    }
+}

@@ -18,22 +18,17 @@
     beStrictAboutOutputDuringTests="true"
     verbose="true"
 >
+    <php>
+        <env name="APP_KEY" value="base64:jTmQc41tLWG8dGCZr+lA6lVrPGyfMaol2ClZx76CQ4k="/>
+    </php>
     <testsuites>
-        <testsuite name="WebId Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Package">
+            <directory suffix=".php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
     <coverage>
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory>src/</directory>
         </include>
-        <report>
-            <html outputDirectory="build/coverage"/>
-            <text outputFile="build/coverage.txt"/>
-            <clover outputFile="build/logs/clover.xml"/>
-        </report>
     </coverage>
-    <logging>
-        <junit outputFile="build/report.junit.xml"/>
-    </logging>
 </phpunit>
